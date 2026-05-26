@@ -1,11 +1,18 @@
-#include "logger"
+#include "logger.hpp"
 
-int Logger::Begin()
-{
-    return 0;
+Logger::Logger(std::string filePath, std::string fileName) {
+  this->filePath = filePath;
+  this->fileName = fileName;
 }
 
-void Logger::print(string str)
-{
-    cout << str;
+Logger::~Logger() {}
+
+int Logger::Begin(std::string filePath, std::string fileName) {
+  this->filePath = filePath;
+  this->fileName = fileName;
+  return 0;
 }
+
+void Logger::PrintToConsole(std::string str) { std::cout << str; }
+
+void Logger::logToFile(std::string str) {}
